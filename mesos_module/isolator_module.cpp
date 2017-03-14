@@ -8,8 +8,8 @@
 #include "module_access_factory.hpp"
 
 namespace {
-  const std::string STATSD_ENV_NAME_HOST = "STATSD_UDP_HOST";
-  const std::string STATSD_ENV_NAME_PORT = "STATSD_UDP_PORT";
+  const std::string STATSD_ENV_NAME_HOST = "metrics_yammerStatsDHost";
+  const std::string STATSD_ENV_NAME_PORT = "metrics_yammerStatsDPort";
 
   void set_env(mesos::slave::ContainerLaunchInfo& launch_info, const metrics::UDPEndpoint& endpoint) {
     mesos::Environment* environment = launch_info.mutable_environment();

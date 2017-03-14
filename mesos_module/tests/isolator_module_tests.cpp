@@ -61,9 +61,9 @@ TEST(IsolatorModuleTests, prepare_returns_success) {
 
   const mesos::Environment& env = ret.get().environment();
   EXPECT_EQ(2, env.variables_size());
-  EXPECT_EQ("STATSD_UDP_HOST", env.variables(0).name());
+  EXPECT_EQ("metrics_yammerStatsDHost", env.variables(0).name());
   EXPECT_EQ(endpoint.host, env.variables(0).value());
-  EXPECT_EQ("STATSD_UDP_PORT", env.variables(1).name());
+  EXPECT_EQ("metrics_yammerStatsDPort", env.variables(1).name());
   EXPECT_EQ(std::to_string(endpoint.port), env.variables(1).value());
 }
 
